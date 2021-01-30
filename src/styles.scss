@@ -1,4 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
-
-/* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
+
+@font-face {
+  font-family: "Nunito";
+  src: local("Nunito"), url(./assets/fonts/nunito/Nunito-Regular.woff) format("truetype");
+}
+
+.btn {
+  color: #12335e;
+  border-color: #12335e;
+}
+
+.btn:hover {
+  background: #12335e;
+  color: #fff;
+  box-shadow: #12335e;
+}
+

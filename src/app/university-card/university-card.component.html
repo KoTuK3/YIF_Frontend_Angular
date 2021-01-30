@@ -1,0 +1,20 @@
+<div class="universityCard" *ngIf="university">
+  <h2 class="header">
+    {{university.abbreviation}}
+  </h2>
+
+  <p class="info">
+    <span>Сайт:</span>
+    {{university.site}}
+  </p>
+  <p class="info">
+    <span>Адреса:</span>
+    {{university.address}}
+  </p>
+  <p class="info">
+    <span>Опис:</span>
+    {{university.description}}
+  </p>
+
+  <button type="button" class="btn">Детальніше</button>
+</div>

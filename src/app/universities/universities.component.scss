@@ -1,0 +1,20 @@
+.universities {  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+ngb-pagination {
+  margin: auto;
+}
+
+.active {
+  color: #fff;
+  border-color: #12335e;
+  background: #12335e;
+}
+
+.page-item {
+  color: #12335e;
+}
