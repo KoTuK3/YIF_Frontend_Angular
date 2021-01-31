@@ -1,5 +1,9 @@
+$darkBlue: #12335e;
+$lightBlue: #d6e5f2;
+$black: #000000;
+$white: #ffffff;
+
 .wrapper {
-  background: aqua;
   width: 500px;
   height: 100%;
   margin-left: auto;
@@ -17,15 +21,15 @@
 }
 
 .inverse-btn {
-  color: #fff;
-  border-color: #12335e;
-  background: #12335e;
+  color: $white;
+  border-color: $darkBlue;
+  background: $darkBlue;
 }
 
 .inverse-btn:hover {
-  background: #fff;
-  color: #12335e;
-  box-shadow: #fff;
+  background: $white;
+  color: $darkBlue;
+  box-shadow: $white;
 }
 
 .dropdown-toggle {

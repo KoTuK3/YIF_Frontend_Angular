@@ -1,6 +1,11 @@
+$darkBlue: #12335e;
+$lightBlue: #d6e5f2;
+$black: #000000;
+$white: #ffffff;
+
 .universityCard {
   font-family: 'Nunito';
-  background: #d6e5f2;
+  background: $lightBlue;
   margin-top: 20px;
   margin-bottom: 20px;
   margin-left: auto;
@@ -12,7 +17,6 @@
 }
 
 .header {
-  font-family: "Nunito", sans-serif;
   font-weight: 600;
   font-size: 2.5rem;
 }

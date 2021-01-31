@@ -1,3 +1,8 @@
+$darkBlue: #12335e;
+$lightBlue: #d6e5f2;
+$black: #000000;
+$white: #ffffff;
+
 .universities {  
   display: flex;
   flex-direction: column;
@@ -10,11 +15,11 @@ ngb-pagination {
 }
 
 .active {
-  color: #fff;
-  border-color: #12335e;
-  background: #12335e;
+  color: $white;
+  border-color: $darkBlue;
+  background: $darkBlue;
 }
 
 .page-item {
-  color: #12335e;
+  color: $darkBlue;
 }
