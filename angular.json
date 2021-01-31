@@ -127,5 +127,6 @@
       }
     }
   },
+  "test": "test",
   "defaultProject": "YIF-Frontend-Angular"
 }
