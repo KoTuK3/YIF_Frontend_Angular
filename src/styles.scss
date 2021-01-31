@@ -10,6 +10,7 @@ $lightBlue: #d6e5f2;
 $lightBlue_3: #f2f9ff;
 
 @import '~bootstrap/scss/bootstrap';
+@import "../node_modules/ol/ol.css";
 
 @font-face {
   font-family: "Nunito";

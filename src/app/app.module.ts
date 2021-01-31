@@ -8,6 +8,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UniversityCardComponent } from './university-card/university-card.component';
 import { UniversityFilterComponent } from './university-filter/university-filter.component';
 import { UniversitiesComponent } from './universities/universities.component';
+import { HeaderComponent } from './header/header.component';
+import { UniversityPageComponent } from './university-page/university-page.component';
+import { UniversityMapComponent } from './university-map/university-map.component';
 
 
 @NgModule({
@@ -15,7 +18,10 @@ import { UniversitiesComponent } from './universities/universities.component';
     AppComponent,
     UniversityCardComponent,
     UniversityFilterComponent,
-    UniversitiesComponent
+    UniversitiesComponent,
+    HeaderComponent,
+    UniversityPageComponent,
+    UniversityMapComponent,
   ],
   imports: [
     BrowserModule,

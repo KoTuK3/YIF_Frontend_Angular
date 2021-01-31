@@ -25,7 +25,7 @@ export class UniversityService {
 
   getUniversityPage(settings: PageSettings, filter: Filter): Observable<Page<University>> {
     let params = this.helper.getParams(filter, settings);
-    console.log(`${this.url}${ params.toString() }`);
+
     return this.http.get<Page<University>>(`${this.url}`, { params });
   }
 
