@@ -1,0 +1,45 @@
+
+
+<div class="universityCard" *ngIf="university">
+  <h2 class="header">
+    {{university.name}}
+  </h2>
+
+  <p class="info">
+    <span>Абривіатура:</span>
+    {{university.abbreviation}}
+  </p>
+
+  <p class="info">
+    <span>Сайт:</span>
+    <a href="{{university.site}}" target="_blank" >{{university.site}}</a>
+  </p>
+
+  <p class="info">
+    <span>Адреса:</span>
+    {{university.address}}
+  </p>
+
+  <p class="info">
+    <span>Телефон:</span>    
+    +{{university.phone}}
+  </p>
+
+  <p class="info">
+    <span>Пошта:</span>    
+    {{university.email}}
+  </p>
+
+  <p class="info">
+    <span>Опис:</span>
+    {{university.description}}
+  </p>
+
+  <p class="info">
+    <span>Вступна кампанія:</span>
+    {{university.startOfCampaign | date: 'dd.MM.yyyy'}} -
+    {{university.endOfCampaign | date: 'dd.MM.yyyy'}}
+  </p>
+
+  <app-university-map [lat]="university.lat" [lon]="university.lon"></app-university-map>
+</div>

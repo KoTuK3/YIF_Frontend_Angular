@@ -1,0 +1,37 @@
+<div class="filter">
+
+  <div ngbDropdown>
+    <button class="btn" ngbDropdownToggle>{{ filter.specialityName ? filter.specialityName : "Спеціальність" }}</button>
+    <div ngbDropdownMenu class="scrollable-menu">   
+
+      <button ngbDropdownItem (click)="filter.specialityName = undefined; updateNames()">Всі</button>
+      <div class="dropdown-divider"></div>
+      <button ngbDropdownItem *ngFor="let n of specialtyNames" (click)="filter.specialityName = n; updateNames()">{{ n }}</button>
+
+    </div>
+  </div>
+
+  <div ngbDropdown>
+    <button class="btn" ngbDropdownToggle>{{ filter.directionName ? filter.directionName : "Напрям" }}</button>
+    <div ngbDropdownMenu class="scrollable-menu">    
+
+      <button ngbDropdownItem (click)="filter.directionName = undefined; updateNames()">Всі</button>
+      <div class="dropdown-divider"></div>
+      <button ngbDropdownItem *ngFor="let n of directionNames" (click)="filter.directionName = n; updateNames()">{{ n }}</button>
+
+    </div>
+  </div>
+    
+  <div ngbDropdown>
+    <button class="btn" ngbDropdownToggle>{{ filter.universityAbbreviation ? filter.universityAbbreviation : "Університет" }}</button>
+    <div ngbDropdownMenu class="scrollable-menu">      
+
+      <button ngbDropdownItem (click)="filter.universityAbbreviation = undefined; updateNames()">Всі</button>
+      <div class="dropdown-divider"></div>
+      <button ngbDropdownItem *ngFor="let a of universityAbbreviations" (click)="filter.universityAbbreviation = a; updateNames()">{{ a }}</button>
+
+    </div>
+  </div>
+  
+  <button type="button" class="btn inverse-btn" (click)="search()">Пошук</button>
+</div>

@@ -1,0 +1,13 @@
+<div *ngIf="page" class="universities">
+  <app-university-filter (filterEvent)="filter = $event; getUniversityPage()"></app-university-filter>
+
+  <ngb-pagination 
+    [collectionSize]="totalSize"
+    [(page)]="pageSettings.page" 
+    [pageSize]="page.pageSize"
+    (pageChange)="getUniversityPage()"></ngb-pagination>
+
+  <div class="universities" >
+    <app-university-card *ngFor="let u of page.responseList" [university]="u" ></app-university-card>
+  </div>
+</div>

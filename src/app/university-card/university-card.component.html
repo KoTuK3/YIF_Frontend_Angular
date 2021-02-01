@@ -1,0 +1,24 @@
+<div class="universityCard" *ngIf="university">
+  <h2 class="header">
+    {{university.name}}
+  </h2>
+
+  <p class="info">
+    <span>Сайт:</span>
+    <a href="{{university.site}}" target="_blank">{{university.site}}</a>
+  </p>
+  <p class="info">
+    <span>Адреса:</span>
+    {{university.address}}
+  </p>
+  <p class="info">
+    <span>Опис:</span>
+    {{university.description}}
+  </p>
+  <p class="info">
+    <span>Вступна кампанія:</span>
+    {{university.startOfCampaign | date: 'dd.MM.yyyy'}} -
+    {{university.endOfCampaign | date: 'dd.MM.yyyy'}}
+  </p>
+  <button type="button" class="btn" routerLink="../university/{{university.id}}">Детальніше</button>
+</div>

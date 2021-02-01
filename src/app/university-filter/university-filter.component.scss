@@ -1,0 +1,42 @@
+$darkBlue: #12335e;
+$lightBlue: #d6e5f2;
+$black: #000000;
+$white: #ffffff;
+
+.wrapper {
+  width: 500px;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.filter {
+  display: flex;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 700px;
+  min-width: 500px;  
+  padding: 30px;
+}
+
+.inverse-btn {
+  color: $white;
+  border-color: $darkBlue;
+  background: $darkBlue;
+}
+
+.inverse-btn:hover {
+  background: $white;
+  color: $darkBlue;
+  box-shadow: $white;
+}
+
+.dropdown-toggle {
+  width: 10em;
+}
+
+.btn {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}

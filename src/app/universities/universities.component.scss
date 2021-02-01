@@ -1,0 +1,25 @@
+$darkBlue: #12335e;
+$lightBlue: #d6e5f2;
+$black: #000000;
+$white: #ffffff;
+
+.universities {  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+ngb-pagination {
+  margin: auto;
+}
+
+.active {
+  color: $white;
+  border-color: $darkBlue;
+  background: $darkBlue;
+}
+
+.page-item {
+  color: $darkBlue;
+}

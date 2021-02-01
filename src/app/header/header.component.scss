@@ -1,0 +1,42 @@
+$darkBlue: #12335e;
+$lightBlue_1: #bad0e5;
+$black: #000000;
+$white: #ffffff;
+
+header {
+  min-width: 550px;
+  display: flex;
+  justify-content: space-evenly;
+  
+  background: $lightBlue_1;  
+  height: 60px;
+  align-items: center;  
+  font-family: 'Nunito';
+  
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.26), 0 5px 5px rgba(0, 0, 0, 0.021);
+}
+
+nav {  
+  display: flex;
+  justify-content: center;
+  width: 300px;
+}
+
+h1 {  
+  font-weight: 900;
+  font-size: 2.5rem;
+}
+
+a {  
+  color: $black;
+  padding: 10px;
+}
+
+.logo {
+  text-decoration: none;
+  padding-top: 10px;
+}
+
+button {
+  margin: 10px;
+}
