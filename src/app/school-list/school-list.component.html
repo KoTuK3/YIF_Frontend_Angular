@@ -1,0 +1,8 @@
+<ul>
+  <li *ngFor="let school of schoolService.Schools;let i = index">
+    <span>
+      <strong>{{i + 1}}</strong> {{school.name}}  <h3>{{school.description}}</h3>
+    </span>
+
+  </li>
+</ul>
