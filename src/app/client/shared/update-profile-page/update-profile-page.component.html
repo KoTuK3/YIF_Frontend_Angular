@@ -1,0 +1,118 @@
+<div class="flex-center">
+    <form [formGroup]="form" (ngSubmit)="submit()">
+        <h2 class="text-center">Оновити дані</h2>
+        <div class="form-group">
+            <label for="name">Ім'я:</label>
+            <input class="form-control" id="name" type="text" formControlName="name" [readonly]="false">
+            <div *ngIf="form.get('name').touched && form.get('name').invalid" class="validation">
+                <small *ngIf="form.get('name').errors.required">Поле є обов'язковою!</small>
+                <p *ngIf="form.get('name').errors.minlength">Поле має містити мінімум 2 символа!</p>
+                <p *ngIf="form.get('name').errors.maxlength">Поле має містити максимум 20 символів!</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="middleName">По батькові:</label>
+            <input class="form-control" id="middleName" type="text" formControlName="middleName">
+            <div *ngIf="form.get('middleName').touched && form.get('middleName').invalid" class="validation">
+                <small *ngIf="form.get('middleName').errors.required">Поле є обов'язковою!</small>
+                <p *ngIf="form.get('middleName').errors.minlength">Поле має містити мінімум 2 символа!</p>
+                <p *ngIf="form.get('middleName').errors.maxlength">Поле має містити максимум 20 символів!</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="surname">Прізвище:</label>
+            <input class="form-control" id="surname" type="text" formControlName="surname">
+            <div *ngIf="form.get('surname').touched && form.get('surname').invalid" class="validation">
+                <small *ngIf="form.get('surname').errors.required">Поле є обов'язковою!</small>
+                <p *ngIf="form.get('surname').errors.minlength">Поле має містити мінімум 2 символа!</p>
+                <p *ngIf="form.get('surname').errors.maxlength">Поле має містити максимум 20 символів!</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Телефон:</label>
+            <input class="form-control" id="phone" type="tel" formControlName="phone">
+            <div *ngIf="form.get('phone').touched && form.get('phone').invalid" class="validation">
+                <small *ngIf="form.get('phone').errors.required">Поле є обов'язковою!</small>
+                <p *ngIf="form.get('phone').errors.minlength">Поле має містити мінімум 13 символа!</p>
+                <p *ngIf="form.get('phone').errors.maxlength">Поле має містити максимум 13 символів!</p>
+                <p *ngIf="form.get('phone').errors.pattern">Поле має містити номер телефона!</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Пошта:</label>
+            <input class="form-control" id="email" type="email" formControlName="email">
+            <div *ngIf="form.get('email').touched && form.get('email').invalid" class="validation">
+                <small *ngIf="form.get('email').errors.required">Електронна пошта є обов'язковою!</small>
+                <small *ngIf="form.get('email').errors.email">Введіть дійсну електронну пошту!</small>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="school">Школа:</label>
+            <select class="form-control" formControlName="school">
+                <option value="Школа №4">Школа №4</option>
+                <option value="ЗОШ №3">ЗОШ №3</option>
+                <option value="Школа №25">Школа №25</option>
+                <option value='Рівненська гімназія \"Гармонія\"'>Рівненська гімназія "Гармонія"</option>
+            </select>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary btn-block"
+                [disabled]="form.invalid || submitted">Оновити</button>
+        </div>
+    </form>
+
+    <img class="img-photo" [src]="form.get('photo').value" onError="this.src='assets/no-avatar.png'"
+        title=" Загрузити нове фото!" (click)="openModal('custom-modal')">
+</div>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<jw-modal id="custom-modal">
+    <button type="button" class="close" aria-label="Close" (click)="closeModal('custom-modal')">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <h3 style="margin-bottom: 5px;" mat-dialog-title>Виберіть фото</h3>
+    <div
+        style="width:100%; height: 90%; margin: auto; display: flex; flex-direction: column; justify-content: flex-end;">
+        <img style="height: 500px; object-fit: contain; margin: 5px;" onError="this.src='assets/no-avatar.png'"
+            [src]="photo" [hidden]="isPhotoloaded" alt="">
+        <image-cropper [imageChangedEvent]="imageChangedEvent" [maintainAspectRatio]="true"
+            [containWithinAspectRatio]="containWithinAspectRatio" [aspectRatio]="5 / 5" [cropperMinWidth]="128"
+            [onlyScaleDown]="true" [roundCropper]="false" [canvasRotation]="canvasRotation" [transform]="transform"
+            [alignImage]="'center'" [style.display]="showCropper ? null : 'none'" format="png"
+            (imageCropped)="imageCropped($event)" (imageLoaded)="imageLoaded()" (cropperReady)="cropperReady($event)"
+            (loadImageFailed)="loadImageFailed()"></image-cropper>
+        <div style="width:100%; display: flex; flex-direction: row; align-items: stretch;">
+            <div class="example-2">
+                <div class="form-group">
+                    <input type="file" name="file" id="file" class="input-file" accept=".png, .jpg, .jpeg"
+                        (change)="fileChangeEvent($event)">
+                    <label for="file" class="btn btn-tertiary js-labelFile">
+                        <i class="icon fa fa-check"></i>
+                        <span class="js-fileName"> Вибрати фото</span>
+                    </label>
+                </div>
+            </div>
+
+            <button class="btn" (click)="closeModal('custom-modal')">Ні, дякую!</button>
+            <button class="btn" style="background-color: green; margin-right: 10px;" (click)="setPhoto()"
+                [disabled]="!isPhotoloaded">Загрузити фото</button>
+
+            <button (click)="rotateLeft()">Повернути ліворуч</button>
+            <button (click)="rotateRight()">Повернути праворуч</button>
+            <button (click)="flipHorizontal()">Перевернути горизонтально</button>
+            <button (click)="flipVertical()">Перевернути вертикально</button>
+            <button (click)="toggleContainWithinAspectRatio()">Поміняти співвідношення</button>
+            <button (click)="resetImage()">Відмінити правки</button>
+
+            <input style="width: 75px; height: auto;" [(ngModel)]="rotation" placeholder="Поворот" type="number"
+                (keyup)="updateRotation()" />
+            <button (click)="zoomOut()">Зменшити</button>
+            <button (click)="zoomIn()">Збільшити</button>
+        </div>
+    </div>
+</jw-modal>

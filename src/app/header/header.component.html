@@ -1,15 +1,18 @@
 <header>
-    <h1>
-      <a href="./" class="logo">YIF</a>
-    </h1>
+  <h1>
+    <a href="./" class="logo">YIF</a>
+  </h1>
   <nav>
-    <a href="./universities">Університети</a>
-    <a href="./schools">Школи</a>
-    <a href="./universities">Напрями</a>
+    <a [routerLink]="['/', 'universities']">Університети</a>
+    <a [routerLink]="['/', 'schools']">Школи</a>
+    <a [routerLink]="['/', 'universities']">Напрями</a>
   </nav>
 
   <div class="auth">
-    <button class="btn">Вхід</button>
-    <button class="btn">Реєстрація</button>
+    <button class="btn">
+      <a [routerLink]="['/client', 'dashboard']">Особистий кабінет</a>
+    </button>
   </div>
 </header>
+
+<router-outlet></router-outlet>
