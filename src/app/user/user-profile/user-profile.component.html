@@ -1,0 +1,42 @@
+<div class="graduateCard" *ngIf="profile">
+  <h3 class="header danger" *ngIf="isError">
+    Помилка при збереженні!
+  </h3>
+  <h2 class="header">
+    Редагування користувача
+  </h2>
+
+  <form>
+    <label>Прізвище:
+      <input type="text" class="form-control" placeholder="Введіть прізвище"
+      [(ngModel)]="profile.surname" name="surname">
+    </label>
+
+    <label>Ім'я:
+      <input type="text" class="form-control" placeholder="Введіть ім'я"
+             [(ngModel)]="profile.name" name="name">
+    </label>
+
+    <label>По-батькові:
+      <input type="text" class="form-control" placeholder="Введіть по-батькові"
+             [(ngModel)]="profile.middleName" name="middleName">
+    </label>
+
+    <label>Електр. пошта:
+      <input type="text" class="form-control" placeholder="Введіть електр. пошту"
+             [(ngModel)]="profile.email" name="email">
+    </label>
+
+    <label>Телефон:
+      <input type="text" class="form-control" placeholder="Введіть номер телефону"
+             [(ngModel)]="profile.phoneNumber" name="phoneNumber">
+    </label>
+
+    <label>Школа:
+      <input type="text" class="form-control" placeholder="Введіть назву школи"
+             [(ngModel)]="profile.schoolName" name="schoolName">
+    </label>
+
+    <button type="button" class="btn" (click)="setGraduate()">Зберегти</button>
+  </form>
+</div>

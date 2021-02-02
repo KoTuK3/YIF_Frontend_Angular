@@ -1,0 +1,34 @@
+<div class="graduateCard" *ngIf="profile">
+  <h2 class="header" *ngIf="profile?.name && profile?.surname">
+    {{profile.name}} {{profile.surname}}
+  </h2>
+  <h2 class="header" *ngIf="profile?.name == null && profile?.surname == null">
+    Користувач
+  </h2>
+
+  <p class="info" *ngIf="profile.surname">
+    <span>Прізвище:</span>
+    {{profile.surname}}
+  </p>
+  <p class="info" *ngIf="profile.name">
+    <span>Ім'я:</span>
+    {{profile.name}}
+  </p>
+  <p class="info" *ngIf="profile.middleName">
+    <span>По-батькові:</span>
+    {{profile.middleName}}
+  </p>
+  <p class="info" *ngIf="profile.email">
+    <span>Електронна пошта:</span>
+    {{profile.email}}
+  </p>
+  <p class="info">
+    <span>Телефон:</span>
+    <a href="{{profile.phoneNumber}}" target="_blank"></a>
+  </p>
+  <p class="info" *ngIf="profile.schoolName">
+    <span>Школа:</span>
+    {{profile.schoolName}}
+  </p>
+  <button type="button" class="btn" routerLink="../user/edit">Редагувати</button>
+</div>

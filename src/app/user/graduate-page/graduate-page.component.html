@@ -1,0 +1,10 @@
+<div class="graduateCard" *ngIf="isError">
+  <h3 class="header danger">
+    Користувач не авторизований!
+  </h3>
+</div>
+<div *ngIf="userProfile" class="graduatePage">
+  <div class="graduatePage" >
+    <app-graduate-card [profile]="userProfile" ></app-graduate-card>
+  </div>
+</div>
