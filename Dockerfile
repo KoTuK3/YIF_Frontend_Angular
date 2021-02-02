@@ -10,5 +10,6 @@ COPY . /app
 RUN npm run build
 
 FROM nginx:latest
+
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY --from=build-step /app/dist/YIF-Frontend-Angular /usr/share/nginx/html
