@@ -1,0 +1,36 @@
+form {
+    width: 80%;
+    margin: auto;
+}
+
+image-cropper {
+    height: 500px;
+}
+
+button {
+    border: 2px solid #555;
+    padding: 2px 5px;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.img-photo {
+    object-fit: contain;
+    width: 50%;
+    height: 100%;
+    margin: 20px;
+    cursor: pointer;
+}
+
+
+.myCustomModalClass .modal-dialog {
+    width: 1000px;
+    height: 90%;
+  }

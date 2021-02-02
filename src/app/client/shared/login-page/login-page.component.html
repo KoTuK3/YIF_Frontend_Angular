@@ -1,0 +1,27 @@
+<form [formGroup]="form" (input)="clearErrorField()" (ngSubmit)="submit()">
+    <h2 class="text-center">Увійти в акаунт</h2>
+    <div class="text-danger" *ngIf="form.get('errorField').invalid">
+        <p *ngIf="form.get('errorField').errors.serverError">{{form.get('errorField').errors.serverError}}</p>
+    </div>
+    <div class="form-group">
+        <label for="email">Пошта</label>
+        <input id="email" class="form-control" type="email" formControlName="email">
+        <div *ngIf="form.get('email').touched && form.get('email').invalid" class="validation">
+            <small *ngIf="form.get('email').errors.required">Електронна пошта є обов'язковою!</small>
+            <small *ngIf="form.get('email').errors.email">Введіть дійсну електронну пошту!</small>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="password">Пароль</label>
+        <input class="form-control" id="password" type="password" formControlName="password">
+        <div *ngIf="form.get('password').touched && form.get('password').invalid" class="validation">
+            <p *ngIf="form.get('password').errors.required">Пароль є обов'язковим!</p>
+            <p *ngIf="form.get('password').errors.minlength">Пароль має містити мінімум 8 символів!</p>
+            <p *ngIf="form.get('password').errors.maxlength">Пароль має містити максимум 20 символів!</p>
+            <p *ngIf="form.get('password').errors.pattern">Пароль має містити щонайменше одну літеру верхнього регістру,
+                одну літеру нижнього регістру, одну цифру, один спеціальний символ!</p>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary btn-block" [disabled]="form.invalid || submitted">Залогінитися</button>
+</form>

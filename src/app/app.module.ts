@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +15,10 @@ import { SchoolListComponent } from './school-list/school-list.component';
 import { SchoolCardComponent } from './school-card/school-card.component';
 import { SchoolFilter } from './shared/school-filter.pipe';
 import { FormsModule } from '@angular/forms';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AuthInterseptor } from './interseptors/auth.interseptor';
+import { ModalModule } from './modal';
 
 
 @NgModule({
@@ -30,8 +34,17 @@ import { FormsModule } from '@angular/forms';
     SchoolCardComponent,
     SchoolFilter,
   ],
-  imports: [BrowserModule, AppRoutingModule, NgbModule, HttpClientModule,FormsModule],
-  providers: [],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    NgbModule, 
+    HttpClientModule, 
+    FormsModule,
+    NgxSpinnerModule,
+    BrowserAnimationsModule,
+    ModalModule
+  ],
+  providers: [{ provide: HTTP_INTERCEPTORS, multi: true, useClass: AuthInterseptor }],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
