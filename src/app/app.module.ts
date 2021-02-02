@@ -12,6 +12,7 @@ import { HeaderComponent } from './header/header.component';
 import { UniversityPageComponent } from './university-page/university-page.component';
 import { UniversityMapComponent } from './university-map/university-map.component';
 import { SchoolListComponent } from './school-list/school-list.component';
+import { SchoolCardComponent } from './school-card/school-card.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { SchoolListComponent } from './school-list/school-list.component';
     UniversityPageComponent,
     UniversityMapComponent,
     SchoolListComponent,
+    SchoolCardComponent,
   ],
   imports: [
     BrowserModule,

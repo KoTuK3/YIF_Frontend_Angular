@@ -1,17 +1,21 @@
+import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { Observable } from "rxjs";
+import { environment } from "src/environments/environment";
+import { School } from "../interfaces/school";
 
 
-export interface School{
-  id:number,
-  name:string,
-  description:string
-}
 
-@Injectable({providedIn: 'root'})
-export class SchoolService{
-  public Schools: School[] =  [
-    {id:1, name: "School 1",description:"description"},
-    {id:2, name: "School 2",description:"description"},
-    {id:3, name: "School 3",description:"description"},
-  ]
+
+@Injectable({ providedIn: 'root' })
+export class SchoolService {
+  public Schools: School[] = [];
+
+  constructor(private http: HttpClient) {}
+
+  private url = `${environment.apiUrl}/School`;
+
+  getAllSchools(): Observable<School[]> {
+      return this.http.get<School[]>(`${this.url}`);
+  }
 }

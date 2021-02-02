@@ -1,16 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { School } from '../interfaces/school';
 import { SchoolService } from '../services/school.service';
 
 @Component({
   selector: 'app-school-list',
   templateUrl: './school-list.component.html',
-  styleUrls: ['./school-list.component.scss']
+  styleUrls: ['../universities/universities.component.scss']
 })
 export class SchoolListComponent implements OnInit {
 
   constructor(public schoolService:SchoolService) { }
 
+   Schools:School[] = []
+
+
   ngOnInit(): void {
+    this.schoolService
+      .getAllSchools()
+      .subscribe((schools) => (this.Schools = schools as School[]));
   }
 
 }
