@@ -26,13 +26,16 @@ export class UpdateProfilePageComponent implements OnInit {
   showCropper = false;
   containWithinAspectRatio = false;
   transform: ImageTransform = {};
-  isPhotoloaded = false;
 
   constructor(
     private clientService: ClientService,
     private router: Router,
     private spinnerService: NgxSpinnerService,
     private modalService: ModalService) { }
+
+  public isPhotoloaded() {
+    return !!this.imageChangedEvent;
+  }
 
   open() {
     const modalRef = this.modalService.open("updatemodal");
@@ -129,13 +132,12 @@ export class UpdateProfilePageComponent implements OnInit {
   }
 
   setPhoto() {
-    this.isPhotoloaded = true;
+    //this.isPhotoloaded = true;
     this.spinnerService.show();
     if (this.croppedImage) {
       this.clientService.setClientPhoto({ photo: this.croppedImage }).subscribe(
         res => {
           this.spinnerService.hide();
-          this.isPhotoloaded = false;
           this.form.patchValue(
             {
               ...res,
@@ -144,13 +146,12 @@ export class UpdateProfilePageComponent implements OnInit {
         },
         err => {
           console.log("ERROR CHANGE PHOTO: ", err);
-          this.isPhotoloaded = false;
           this.spinnerService.hide();
         })
     }
     else {
       console.log("Load failed");
-          this.modalService.close('custom-modal');
+      this.modalService.close('custom-modal');
     }
   }
 
@@ -164,7 +165,6 @@ export class UpdateProfilePageComponent implements OnInit {
 
   imageLoaded() {
     this.showCropper = true;
-    this.isPhotoloaded = true;
     console.log('Image loaded');
   }
 
