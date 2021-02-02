@@ -13,6 +13,8 @@ import { UniversityPageComponent } from './university-page/university-page.compo
 import { UniversityMapComponent } from './university-map/university-map.component';
 import { SchoolListComponent } from './school-list/school-list.component';
 import { SchoolCardComponent } from './school-card/school-card.component';
+import { SchoolFilter } from './shared/school-filter.pipe';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -26,14 +28,10 @@ import { SchoolCardComponent } from './school-card/school-card.component';
     UniversityMapComponent,
     SchoolListComponent,
     SchoolCardComponent,
+    SchoolFilter,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NgbModule,    
-    HttpClientModule 
-  ],
+  imports: [BrowserModule, AppRoutingModule, NgbModule, HttpClientModule,FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
