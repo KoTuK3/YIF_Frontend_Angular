@@ -1,0 +1,21 @@
+form {
+    width: 80%;
+    margin: auto;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.img-photo {
+    object-fit: contain;
+    width: 50%;
+    height: 100%;
+    margin: 20px;
+    cursor: pointer;
+}

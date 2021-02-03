@@ -4,7 +4,10 @@
 
 export const environment = {
   production: false,
+  recaptchaSiteKey: "6Le3gRkaAAAAADJIzK5jv3HegJ7VzkuS0XiBa-mK",
   apiUrl: 'https://localhost:44324/api'
+  //apiUrl: 'http://localhost:5000/api'
+  //apiUrl: 'https://yifbackend.tk/api'
 };
 
 /*

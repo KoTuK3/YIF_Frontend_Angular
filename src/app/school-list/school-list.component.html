@@ -1,0 +1,14 @@
+<div class="universities">
+  <div class="filter">
+    <input
+    type = "text"
+    placeholder="Name"
+    [(ngModel)] = "search"
+    >
+
+  </div>
+
+  <div class="universities">
+    <app-school-card *ngFor="let u of Schools | schoolFilter:search;" [school]="u" ></app-school-card>
+  </div>
+</div>
